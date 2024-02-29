@@ -4,16 +4,16 @@ import { AppHeader } from "./components/AppHeader/AppHeader";
 import { AppMain } from "./components/AppMain/AppMain";
 import { AppFooter } from "./components/AppFooter/AppFooter";
 import { queryClient } from "./queryClient";
-import { BrowserRouter} from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <HashRouter>
         <AppHeader />
         <AppMain />
         <AppFooter />
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
   );
 }
