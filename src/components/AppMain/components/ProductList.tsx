@@ -37,10 +37,10 @@ export const ProductList = ({ filters }: ProductListProps) => {
       }
     });
   }
-  const productList = Array
-    .from(uniqueProducts
-    .values())
-    .slice(0,itemsPerPage);
+  const productList = Array.from(uniqueProducts.values()).slice(
+    0,
+    itemsPerPage
+  );
 
   if (isLoading || isItemsLoading || isFilteredIdsLoading || !products) {
     return <Loading />;
