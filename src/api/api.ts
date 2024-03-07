@@ -14,7 +14,7 @@ export function useGetIds(offset: number, limit: number) {
       const authHeader = generateAuthHeader("Valantis");
       try {
         const response = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action: "get_ids",
             params: { offset, limit },
@@ -52,7 +52,7 @@ export function useGetItems(ids: string[]) {
       const authHeader = generateAuthHeader("Valantis");
       try {
         const response = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action: "get_items",
             params: { ids },
@@ -93,7 +93,7 @@ export function useGetFields(offset: number, limit:number) {
       for (const field of fields) {
         try {
           const response = await axios.post(
-            "http://api.valantis.store:40000/",
+            "https://api.valantis.store:41000/",
             {
               action: "get_fields",
               params: { field, offset, limit },
@@ -133,7 +133,7 @@ export function useFilter(params: Record<string, any>) {
       const authHeader = generateAuthHeader("Valantis");
       try {
         const response = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action: "filter",
             params,
