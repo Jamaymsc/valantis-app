@@ -7,7 +7,6 @@ interface ErrorWithId extends Error {
 }
 
 export function useGetIds(offset: number, limit: number) {
-
   return useQuery(
     ["getIds", offset, limit],
     async () => {
@@ -28,7 +27,6 @@ export function useGetIds(offset: number, limit: number) {
         if (axios.isAxiosError(error)) {
           const axiosError = error as AxiosError<ErrorWithId>;
           console.error(axiosError.response?.data.id || axiosError);
-          throw axiosError;
         }
         throw error;
       }
@@ -66,7 +64,6 @@ export function useGetItems(ids: string[]) {
         if (axios.isAxiosError(error)) {
           const axiosError = error as AxiosError<ErrorWithId>;
           console.error(axiosError.response?.data.id || axiosError);
-          throw axiosError;
         }
         throw error;
       }
@@ -83,7 +80,7 @@ export function useGetItems(ids: string[]) {
   );
 }
 
-export function useGetFields(offset: number, limit:number) {
+export function useGetFields(offset: number, limit: number) {
   return useQuery(
     ["getFields", offset, limit],
     async () => {
@@ -107,7 +104,6 @@ export function useGetFields(offset: number, limit:number) {
           if (axios.isAxiosError(error)) {
             const axiosError = error as AxiosError<ErrorWithId>;
             console.error(axiosError.response?.data.id || axiosError);
-            throw axiosError;
           }
           throw error;
         }
@@ -147,7 +143,6 @@ export function useFilter(params: Record<string, any>) {
         if (axios.isAxiosError(error)) {
           const axiosError = error as AxiosError<ErrorWithId>;
           console.error(axiosError.response?.data.id || axiosError);
-          throw axiosError;
         }
         throw error;
       }
